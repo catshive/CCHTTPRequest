@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.source       = { :git => "https://github.com/catshive/CCHTTPRequest.git", :tag => "1.0.0" }
   s.source_files  = "Classes", "Classes/CCHTTPRequest.{h,m}"
-  # s.requires_arc = true
+  s.requires_arc = true
 
 end
