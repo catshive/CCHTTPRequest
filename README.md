@@ -20,11 +20,23 @@ Step 3: Begin the request.
 
 #### Example
 ~~~
-CCHTTPRequest *aRequest = [[CCHTTPRequest alloc] initWithURL:[NSURL urlWithString: @"http://www.google.com"];
+// Step 1. Create the request
+CCHTTPRequest *aRequest = [[CCHTTPRequest alloc] initWithURL:[NSURL URLWithString:@"http://graph.facebook.com/zowieso"]];
 
-[aRequest setCompletionBlock:nil failureBlock:nil];
+// Step 2. Set the completion and failure blocks
+[aRequest setCompletionBlock:^(NSURLResponse *theResponse, NSData *theData) {
+	NSError *anError;
+   id aResponseJSON = [NSJSONSerialization JSONObjectWithData:theData options:NSJSONReadingAllowFragments error:&anError];
+   if (!anError) {
+      NSLog(@"%@", aResponseJSON);
+   }
+} failureBlock:^(NSError *theError) {
+   NSLog(@"Request failed with error: %@", theError);
+}];
 
+// Step 3. Begin the request
 [aRequest begin];
+
 ~~~
 
 #### Author
