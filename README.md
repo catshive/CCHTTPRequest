@@ -45,4 +45,4 @@ Cathy Shive, catshive@gmail.com
 
 #### License
 
-CCCoreDataStore is available under the MIT license. See the LICENSE file for more info.
+CCHTTPRequest is available under the MIT license. See the LICENSE file for more info.
