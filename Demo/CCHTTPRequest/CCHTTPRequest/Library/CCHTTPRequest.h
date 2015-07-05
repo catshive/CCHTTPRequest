@@ -44,7 +44,7 @@ typedef void (^CCHTTPRequestFailureBlock)(NSError *theError);
 /**
     @return NSURLRequest - the actual request object.
  */
-@property (nonatomic, readonly, strong) NSURLRequest *request;
+@property (nonatomic, readonly, strong) NSMutableURLRequest *request;
 
 /**
     @return an initialized CCHTTPReqest object ready to begin a GET request with the given url.
