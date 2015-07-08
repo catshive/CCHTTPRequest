@@ -28,7 +28,7 @@
 
 @interface CCHTTPRequest ()
 
-@property (nonatomic, readwrite, strong) NSURLRequest *request;
+@property (nonatomic, readwrite, strong) NSMutableURLRequest *request;
 
 @property (nonatomic, strong) NSURL *URL;
 
@@ -69,6 +69,7 @@
         self.method = theMethod;
         self.parameters = theParameters;
         self.headers = theHeaders;
+        self.request = [NSMutableURLRequest requestWithURL:self.URL];
     }
     return self;
 }
@@ -81,9 +82,8 @@
 
 - (void)begin
 {
-    // Build the request
-    NSMutableURLRequest *aRequest = [NSMutableURLRequest requestWithURL:self.URL];
-
+    NSMutableURLRequest *aRequest = self.request;
+    
     // Method
     aRequest.HTTPMethod = [self _stringForMethodType:self.method];
 
