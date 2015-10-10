@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CCHTTPRequest"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "No-frills networking for iOS."
   s.homepage     = "https://github.com/catshive/CCHTTPRequest"
   s.license      = { :type => "MIT", :file => "LICENSE" }
