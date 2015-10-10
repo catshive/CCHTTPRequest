@@ -105,8 +105,7 @@
 
     self.request = aRequest;
 
-    // Start connection on main thread so that connection callbacks are guaranteed on main thread
-    [self performSelectorOnMainThread:@selector(_startConnection) withObject:nil waitUntilDone:NO];
+    [self _startConnection];
 }
 
 - (void)_startConnection
